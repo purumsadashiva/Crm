@@ -211,7 +211,7 @@ function TablePage() {
       (statusQuery === "" || status.startsWith(statusQuery.toLowerCase()))
     );
   });
-
+//useeffect hook that will save data to local storage
   useEffect(() => {
     saveDataToLocal(data);
   }, [data]);
