@@ -33,10 +33,12 @@ function TablePage() {
   };
 
   //getting the data from the localstorage
-  const getDataFromLocal = () => {
-    const localData = localStorage.getItem("leads");
-    return localData ? initialData : JSON.parse(localData);
-  };
+// Getting the data from local storage or returning initialData if no data found
+const getDataFromLocal = () => {
+  const localData = localStorage.getItem("leads");
+  return localData ? JSON.parse(localData) : initialData; // Return initialData if localData is null
+};
+
 
   //usestates
   const [data, setData] = useState(getDataFromLocal);
